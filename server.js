@@ -21,9 +21,12 @@ app.use(morgan('short', { stream: logger.stream }));
 app.use('/', routes);
 
 // Start the API
-app.listen(config.apiPort);
+//app.listen(config.apiPort);
+const port = process.env.PORT || 5000;
+const host = '0.0.0.0'
+app.listen(port, host, )
 //app.listen(process.env.PORT, '0.0.0.0');
-logger.log('info', `api running on port ${config.apiPort}`);
+logger.log('info', `api running on port ${port}`);
 
 // Export API server for testing
 module.exports = app;
